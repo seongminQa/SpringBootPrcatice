@@ -47,6 +47,19 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!--사용자 요청 정보의 유효성 검사를 위한 주입-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+		<!--JSON 형식의 반환을 XML의 형식으로 반환해주기 위한 주입 (상황에 따라 xml데이터를 반환해야 할 때가 있음)-->
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<version>2.13.4</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
