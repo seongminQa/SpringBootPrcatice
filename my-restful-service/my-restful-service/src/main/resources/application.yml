@@ -11,5 +11,25 @@ logging:
 
 spring:
   message:
-    basename: messages.properties
+    basename: messages
+  # Spring Security 이용
+  # --> YAML파일에 이렇게 설정해놓으면 한 번 지정된 아이디와 패스워드를 변경하기 위해선 매번 서버를 다시 재기동해야 한다..
+#  security:
+#    user:
+#      name: znznfltm
+#      password: seongmin
 
+# Spring boot 2.x 버전에서 Swagger를 사용하기 위한 설정
+#spring:
+#  message:
+#    beasname: message
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ant_path_matcher
+
+# Spring Boot Actuator 설정
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

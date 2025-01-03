@@ -5,8 +5,10 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
+		<!--REST API 사용 문서를 위한 Swagger인 Spring fox를 사용하기 위해선 Spring 2.x 버전을 사용해야 한다.-->
+<!--		<version>2.7.10</version>-->
+		<!--REST API 사용 문서를 위한 Swagger인 Spring Doc을 사용하기 위해선 Spring 3.x 버전을 사용해야 한다.-->
 		<version>3.1.5</version>
-		<!--        <version>2.7.6</version>-->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>kr.co.joneconsulrting</groupId>
@@ -47,17 +49,67 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 		<!--사용자 요청 정보의 유효성 검사를 위한 주입-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 			<version>3.0.2</version>
 		</dependency>
+
 		<!--JSON 형식의 반환을 XML의 형식으로 반환해주기 위한 주입 (상황에 따라 xml데이터를 반환해야 할 때가 있음)-->
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
 			<version>2.13.4</version>
+		</dependency>
+
+		<!--Level3 단계의 REST API 구현을 위한 HATEOAS 사용-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
+		</dependency>
+
+		<!-- Swagger + Spring Boot 2.x -->
+		<!-- <dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+			<version>2.7.6</version>
+		</dependency> -->
+
+		<!-- Swagger + Spring Boot 3.x -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+
+		<!-- SpringBoot가 가지고 있는 기본적인 기능 + 모니터링, 로깅 정보 제어 서포트 라이브러리 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<!-- 우리가 제공하려고 하는 Resource에 특정 정보를 링크로 추가할 수 있도록 제공 (HAL Explorer) -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-hal-explorer</artifactId>
+		</dependency>
+
+		<!-- 애플리케이션 인증, 보안을 위한 라이브러리 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 
 	</dependencies>
